@@ -1,23 +1,31 @@
-    # Node.js and NPM
-    node_modules/
-    .env
-    npm-debug.log*
-    yarn-debug.log*
+# Ignore node modules and env files for both root and subfolders
+node_modules/
+**/node_modules/
+.env
+**/.env
 
-    # React build output
-    build/
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
 
-    # MongoDB data (if local)
-    data/db/
+# Build output
+build/
 
-    # Operating System files
-    .DS_Store
-    Thumbs.db
+# Local MongoDB data
+data/db/
 
-    # Editor specific files
-    .vscode/
-    .idea/
+# OS files
+.DS_Store
+Thumbs.db
 
-    # Log files and temporary files
-    *.log
-    *.tmp
+# Editor specific files
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Optional: lock files depending on workflow
+# package-lock.json
+# yarn.lock

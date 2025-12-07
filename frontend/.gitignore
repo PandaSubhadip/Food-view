@@ -1,5 +1,6 @@
-# Backend-specific ignores
+# Frontend-specific ignores
 node_modules/
 .env
+build/
 npm-debug.log*
 *.log
