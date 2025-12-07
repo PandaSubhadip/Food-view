@@ -1,0 +1,23 @@
+    # Node.js and NPM
+    node_modules/
+    .env
+    npm-debug.log*
+    yarn-debug.log*
+
+    # React build output
+    build/
+
+    # MongoDB data (if local)
+    data/db/
+
+    # Operating System files
+    .DS_Store
+    Thumbs.db
+
+    # Editor specific files
+    .vscode/
+    .idea/
+
+    # Log files and temporary files
+    *.log
+    *.tmp
