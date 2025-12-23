@@ -1,9 +1,8 @@
 const food = require('../model/food_model');
 const jwt = require('jsonwebtoken');
 const user_model = require('../model/user_model');
-
 const foodAuthMiddleware = async (req, res, next) => {
-    const token = req.params.token || req.cookies.token || req.headers['authorization'];
+    const token = req.params.token || req.cookies.token || req.headers['authorization'] ;
     if (!token) {
         return res.status(401).json({ message: 'User not login' });
         
