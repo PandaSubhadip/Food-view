@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import '../styles/foodUploader.css'
 import axios from 'axios'
 
+ 
 const FoodUploder = () => {
-  const [name, setName] = useState('')
+  const [Name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [image, setImage] = useState(null)
   const [video, setVideo] = useState(null)
@@ -27,6 +28,8 @@ const FoodUploder = () => {
   }
 
   const resetForm = () => {
+
+
     setName('')
     setDescription('')
     setImage(null)
@@ -36,28 +39,30 @@ const FoodUploder = () => {
   }
 
   const handleSubmit = async (e) => {
+  
     e.preventDefault()
-    if (!name.trim()) {
+    if (!Name.trim()) {
       alert('Please provide a name for the food item.')
       return
     }
     setSubmitting(true)
     try {
       const form = new FormData()
-      form.append('name', name)
+      form.append('Name', Name)
       form.append('description', description)
       if (image) form.append('image', image)
       if (video) form.append('video', video)
+             
 
-    const food = await  axios.post('http://localhost:3000/api/v1/food/upload', form, {
+     await  axios.post('http://localhost:3000/api/v1/food/upload', form, {
         withCredentials: true,
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+       
       })
+      
+      
+      alert('Thanks for Your Contribution!')
+     
 
-      console.log('Prepared FormData (demo):', food)
-      alert('Upload simulated — check console. Replace fetch URL in code to send to backend.')
       resetForm()
     } catch (err) {
       console.error(err)
@@ -82,7 +87,7 @@ const FoodUploder = () => {
           <input
             className="input"
             type="text"
-            value={name}
+            value={Name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g., Spicy Tomato Pasta"
           />
